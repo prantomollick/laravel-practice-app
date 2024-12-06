@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     function home(Request $request) {
-        return view('site.home' );
+        return view('site.index' );
+    }
+
+    function menu(Request $request) {
+        return view('site.menu' );
     }
 
     function about(Request $request) {
@@ -16,5 +20,13 @@ class SiteController extends Controller
 
     function contact(Request $request) {
         return view('site.contact' );
+    }
+
+    function reservations(Request $request) {
+        return view('site.reservations' );
+    }
+
+    function styles(Request $request) {
+        return view('site.styles' );
     }
 }

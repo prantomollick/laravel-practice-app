@@ -43,12 +43,24 @@ class TaskController extends Controller
             'description' => 'This is task 6',
             'status' => 'not started'
         ],
+        [
+            'id' => 7,
+            'name' => 'Task 7',
+            'description' => 'This is task 7',
+        ]
     ];
 
 
     function index() {
         // return response($this->taks, 200);
-        return response()->json($this->tasks, 200);
+        // return response()->json($this->tasks, 200);
+        // return view('hello');
+        $total = count($this->tasks); 
+        $name = "Pranto Mollick";
+        // return view('tasks.alltasks', ['name' => 'Jhon doe', 'total' => $totalTasks]);
+        // return view('tasks.alltasks', compact('name', 'total'));
+
+        return view('tasks.alltasks', ['tasks' => $this->tasks]);
     }
 
 
